@@ -3,27 +3,11 @@
 
 
 	let userInputFirstName = prompt('Введите Ваше имя');
-		while (userInputFirstName.length === 0)
-		{
-	
-		alert('Введено пустое поле, пожалуйста введите данные');
-		userInputFirstName = prompt('Введите Ваше имя');
-	
-		}
+		nameTest(userInputFirstName);
 	let userInputSecondName = prompt('Введите Вашу фамилию');
-		while (userInputSecondName.length === 0){
-	
-		alert('Введено пустое поле, пожалуйста введите данные');
-		userInputSecondName = prompt('Введите Вашу фамилию');
-	
-		}
+		nameTest(userInputSecondName);
 	let userInputMiddleName = prompt('Введите Ваше отчество');
-		while (userInputMiddleName.length === 0){
-	
-		alert('Введено пустое поле, пожалуйста введите данные');
-		userInputMiddleName = prompt('Введите Ваше отчество');
-	
-		}
+		nameTest(userInputMiddleName);
 
 
 													// Ввод Даты рождения
@@ -33,23 +17,13 @@
 let year = prompt('Введите год Вашего рождения'),
 	test,
 	isYear;
+	
 		test = 2017 - Number(year);
-		while (Number(year) <= 1900 || test <= 0)
+		while (test < 0)
 	{
 		alert('Введено неверное значение, пожалуйста повторите ввод');
 		year = prompt('Введите год вашего рождения');
 		test = 2017 - Number(year);
-	}
-	
-	if (test > 100 || test < 4){
-		isYear = confirm('Вы уверены что вам ' + test + ' лет?');
-	}
-	if (isYear){
-
-	} else {
-		while (test > 100 || test < 4){
-		year = prompt('Введите год вашего рождения ещё раз, пожалуйста')
-	}
 	}
 
 
@@ -57,54 +31,36 @@ let year = prompt('Введите год Вашего рождения'),
 
 let month = prompt('Введите месяц вашего рождения');
 	
-	while (Number(month) <= 0 || (Number(month) > 12)){
+	while (Number(month) <= 0 || (Number(month) > 12))
+	{
 		alert('Введено неверное значение, пожалуйста повторите ввод');
 		month = prompt('Введите месяц вашего рождения');
 	}
-		if ((Number(month) === 1) || (month === 'январь')){
-			month = 'января';
-		}
-		if (Number(month) === 2 || (month === 'февраль')){
-			month = 'февраля';
-		}
-		if (Number(month) === 3 || (month === 'март')){
-			month = 'марта';
-		}
-		if (Number(month) === 4 || (month === 'апрель')){
-			month = 'апреля';
-		}
-		if (Number(month) === 5 || (month === 'май')){
-			month = 'мая';
-		}
-		if (Number(month) === 6 || (month === 'июнь')){
-			month = 'июня';
-		}
-		if (Number(month) === 7 || (month === 'июль')){
-			month = 'июля';
-		}
-		if (Number(month) === 8 || (month === 'август')){
-			month = 'августа';
-		}
-		if (Number(month) === 9 || (month === 'сентябрь')){
-			month = 'сентября';
-		}
-		if (Number(month) === 10 || (month === 'октябрь')){
-			month = 'октября';
-		}
-		if (Number(month) === 11 || (month === 'ноябрь')){
-			month = 'ноября';
-		}
-		if (Number(month) === 12 || (month === 'декабрь')){
-			month = 'декабря';
-		}
+		nameMonth('январь', 1, 'января');
+		nameMonth('февраль', 2, 'февраля');
+		nameMonth('март', 3, 'марта');
+		nameMonth('апрель', 4, 'апреля');
+		nameMonth('май', 5, 'мая');
+		nameMonth('июнь', 6, 'июня');
+		nameMonth('июль', 7, 'июля');
+		nameMonth('август', 8, 'августа');
+		nameMonth('сентябрь', 9, 'сентября');
+		nameMonth('октябрь', 10, 'октября');
+		nameMonth('ноябрь', 11, 'ноября');
+		nameMonth('декабрь', 12, 'декабря');
+		
 
 
 let day = prompt('Введите день вашего рождения');
-	if (Number(day) <= 0 || (Number(day) > 31)){
-	while (Number(day) <= 0 || (Number(day) > 31)){
-		alert('Введено неверное значение, пожалуйста повторите ввод');
-		day = prompt('Введите день вашего рождения');
-	}}
+	daysNumber();
+	if (Number(day) <= 0 || (Number(day) > 31))
+    {
+		while (Number(day) <= 0 || (Number(day) > 31))
+		{
+			alert('Введено неверное значение, пожалуйста повторите ввод');
+			day = prompt('Введите день вашего рождения');
+		}
+	}
 
 		// Проверка ввода месяца 'февраль'
 
@@ -158,11 +114,7 @@ let integer, divideOnFour, divideOnHundred,
 															// Ввод места жительства
 
 	let country = prompt('Введите страну, где Вы проживаете');
-	while (country.length === 0 )
-	{
-		alert('Не верное значение');
-		country = prompt('Введите страну, где Вы проживаете');
-	}
+	nameTest(country);
 	let ask = prompt('Укажите тип населенного пункта: 1 - Город, 2 - Село, 3 - Деревня'),
 		conclusion,
 		display;
@@ -201,24 +153,17 @@ let integer, divideOnFour, divideOnHundred,
 		
 	}
 	town = prompt('Введите '+ display + ' в котором Вы проживаете');
-	while (town.length === 0 )
-	{
-		alert('Не верное значение');
-		town = prompt('Укажите Ваш дом');
-	}
+	nameTest(town);
 
 
 	let house = prompt('Укажите Ваш дом');
-	while (house.length === 0 )
-	{
-		alert('Не верное значение');
-		house = prompt('Укажите Ваш дом');
-	}
+	nameTest(house);
 
 														//Ввод пола
 
 		let male = prompt('Выберите пол: мужской или женский');
-		if (Number(male) === 1){
+		if (Number(male) === 1)
+		{
 			male = 'муж';
 		}else if (Number(male) === 2)
 		{
@@ -235,13 +180,17 @@ let integer, divideOnFour, divideOnHundred,
 														//Подсчет пенсии
 
 	let pension;
-	if ((male === 'мужской' || male === 'муж') && test >=60)
+	if (test > 200)
+	{
+		pension = 'Нуууу, скорее нет, чем да)'
+	}else if ((male === 'мужской' || male === 'муж') && test >=60)
 	{
 		pension = 'Да';
 	} else if ((male === 'женский' || male ==='жен' ) && test >=55)
 	{
 		pension = 'Да';
-	} else{
+	} else
+	{
 		pension = 'Нет';
 	}
 
@@ -250,7 +199,7 @@ let integer, divideOnFour, divideOnHundred,
 alert(  'ФИО: ' + userInputSecondName +
   		' ' + userInputFirstName +
   		' ' + userInputMiddleName + 
-  		'\r\nДата рождения: ' + day + ' ' + month + ' ' + year + 
+  		'\r\nДата рождения: ' + day + ' ' + month + ' ' + year + ' года' + 
   		'\r\nПол: '+ male + '\r\n' +'Адрес: ' + country + conclusion + town + ' д. ' + house +
   		'\r\nПенсия: '+ pension);
 		
@@ -265,22 +214,56 @@ alert(  'ФИО: ' + userInputSecondName +
 
 
 
-
-
-
-function isInteger(num) {
-  return (num ^ 0) === num;
+function daysNumber()
+{
+	if (month === 'февраля' ||
+		month === 'апреля' ||
+		month === 'мая' ||
+		month === 'июня' ||
+		month === 'сентября' ||
+		month === 'ноября')
+	{
+		while (Number(day) <= 0 || (Number(day) > 30))
+		{
+			alert('Введено неверное значение, в этом месяце не больше 30 дней, пожалуйста повторите ввод');
+			day = prompt('Введите день вашего рождения');
+		}
+	}
+	return day;
 }
 
 
+function isInteger(num) 
+{
+  return (num ^ 0) === num;
+}
 
-//function nameTest (name){
-	//if (name.length === 0){
-	//while (name.length === 0){
-	
-		//alert('Введено пустое поле, пожалуйста введите данные');
-		//name = prompt('Введите данные ещё раз');
-	
+function nameMonth(monthName, numb, result)
+{
+	if ((Number(month) === numb) || (month === monthName))
+	{
+		month = result;
+	}
+	return month;
+}
 
-//}
-//}}
+function question()
+{
+	if (test > 100 || test < 4)
+		{
+			isYear = confirm('Вы уверены что вам ' + test + ' лет?');
+		}
+	return (isYear);
+}
+
+
+function nameTest (name){
+	if (name.length === 0){
+	while (name.length === 0)
+	{
+		alert('Введено пустое поле, пожалуйста введите данные');
+		name = prompt('Введите данные ещё раз');
+	}
+	return name;
+}
+}
